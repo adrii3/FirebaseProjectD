@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
  */
 public class HomeFragment extends Fragment {
 
+    private NavController navController;
 
     public HomeFragment() {
     }
@@ -37,5 +38,13 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Log.e("ABCD", "Logueda como " + FirebaseAuth.getInstance().getCurrentUser().getEmail());
+
+        navController = Navigation.findNavController(view);
+        view.findViewById(R.id.gotoNewPostFragmentButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.newPostFragment);
+            }
+        });
     }
 }

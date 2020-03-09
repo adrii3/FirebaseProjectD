@@ -17,6 +17,8 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -75,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        FirebaseFirestore.getInstance().setFirestoreSettings(new FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(false)
+                .build());
     }
 
     @Override
