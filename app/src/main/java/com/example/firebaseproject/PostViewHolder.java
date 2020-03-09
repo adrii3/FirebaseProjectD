@@ -14,7 +14,7 @@ class PostViewHolder extends RecyclerView.ViewHolder{
     PostViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        authorPhotoImageView = itemView.findViewById(R.id.authorPhotoImageView);
+        authorPhotoImageView = itemView.findViewById(R.id.photoImageView);
         authorTextView = itemView.findViewById(R.id.authorTextView);
         contentTextView = itemView.findViewById(R.id.contentTextView);
     }

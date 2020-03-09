@@ -92,18 +92,18 @@ public class NewPostFragment extends Fragment {
                 publicar();
             }
         });
-        private void publicar(){
-            String postContent = postContentEditText.getText().toString();
+    }
+    private void publicar(){
+        String postContent = postContentEditText.getText().toString();
 
-            if(TextUtils.isEmpty(postContent)){
-                postContentEditText.setError("Required");
-                return;
-            }
-
-            publishButton.setEnabled(false);
-
-            guardarEnFirestore(postContent);
+        if(TextUtils.isEmpty(postContent)){
+            postContentEditText.setError("Required");
+            return;
         }
+
+        publishButton.setEnabled(false);
+
+        guardarEnFirestore(postContent);
     }
 
     private void guardarEnFirestore(String postContent) {
